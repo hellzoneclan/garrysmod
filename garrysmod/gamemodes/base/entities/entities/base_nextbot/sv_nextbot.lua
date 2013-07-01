@@ -3,8 +3,7 @@
 -- Desc: Called to initialize the behaviour.\n\n You shouldn't override this - it's used to kick off the coroutine that runs the bot's behaviour. \n\nThis is called automatically when the NPC is created, there should be no need to call it manually.
 -- Arg1: 
 -- Ret1:
--- Realm: Server-- Rea
-lm: Server
+-- Realm: Server
 --
 function ENT:BehaveStart()
 
