@@ -234,6 +234,7 @@ local T =
 	-- Desc: Push an item onto the stack
 	-- Arg1: any|object|The item you want to push
 	-- Ret1:
+	-- Realm: Shared
 	--
 	Push = function( self, obj )
 
@@ -247,6 +248,7 @@ local T =
 	-- Desc: Pop an item from the stack
 	-- Arg1: number|amount|Optional amount of items you want to pop (defaults to 1)
 	-- Ret1:
+	-- Realm: Shared
 	--
 	Pop = function( self, num )
 		
@@ -269,6 +271,7 @@ local T =
 	-- Desc: Get the item at the top of the stack
 	-- Arg1:
 	-- Ret1: any|The item
+	-- Realm: Shared
 	--
 	Top = function( self, time )
 
@@ -281,6 +284,7 @@ local T =
 	-- Desc: Returns the size of the stack
 	-- Arg1:
 	-- Ret1: number|The size of the stack
+	-- Realm: Shared
 	--
 	Size = function( self, time )
 
@@ -297,6 +301,7 @@ T.__index = T
 -- Desc: Returns a new Stack object
 -- Arg1:
 -- Ret1: Stack|a brand new stack object
+-- Realm: Shared
 --
 function util.Stack()
 
