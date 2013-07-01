@@ -3,6 +3,8 @@
 -- Desc: Called to initialize the behaviour.\n\n You shouldn't override this - it's used to kick off the coroutine that runs the bot's behaviour. \n\nThis is called automatically when the NPC is created, there should be no need to call it manually.
 -- Arg1: 
 -- Ret1:
+-- Realm: Server-- Rea
+lm: Server
 --
 function ENT:BehaveStart()
 
@@ -16,6 +18,7 @@ end
 -- Desc: Called to update the bot's behaviour
 -- Arg1: number|interval|How long since the last update
 -- Ret1:
+-- Realm: Server
 --
 function ENT:BehaveUpdate( fInterval )
 
@@ -36,6 +39,7 @@ end
 -- Desc: Called to update the bot's animation
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:BodyUpdate()
 
@@ -64,6 +68,7 @@ end
 -- Desc: Called when the bot's feet leave the ground - for whatever reason
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnLeaveGround()
 
@@ -76,6 +81,7 @@ end
 -- Desc: Called when the bot's feet return to the ground
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnLandOnGround()
 
@@ -88,6 +94,7 @@ end
 -- Desc: Called when the bot thinks it is stuck
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnStuck()
 
@@ -100,6 +107,7 @@ end
 -- Desc: Called when the bot thinks it is un-stuck
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnUnStuck()
 
@@ -112,6 +120,7 @@ end
 -- Desc: Called when the bot gets hurt
 -- Arg1: CTakeDamageInfo|info|damage info
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnInjured( damageinfo )
 
@@ -122,6 +131,7 @@ end
 -- Desc: Called when the bot gets killed
 -- Arg1: CTakeDamageInfo|info|damage info
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnKilled( damageinfo )
 
@@ -134,6 +144,7 @@ end
 -- Desc: Called when someone else or something else has been killed
 -- Arg1:
 -- Ret1:
+-- Realm: Server
 --
 function ENT:OnOtherKilled()
 
@@ -147,6 +158,7 @@ end
 -- Desc: Returns a table of hiding spots.
 -- Arg1: table|specs|This table should contain the search info.\n\n * 'type' - the type (either 'hiding')\n * 'pos' - the position to search.\n * 'radius' - the radius to search.\n * 'stepup' - the highest step to step up.\n * 'stepdown' - the highest we can step down without being hurt.
 -- Ret1: table|An unsorted table of tables containing\n * 'vector' - the position of the hiding spot\n * 'distance' - the distance to that position
+-- Realm: Server
 --
 function ENT:FindSpots( tbl )
 
@@ -197,6 +209,7 @@ end
 -- Arg1: string|type|Either "random", "near", "far"
 -- Arg2: table|options|A table containing a bunch of tweakable options. See the function definition for more details
 -- Ret1: vector|If it finds a spot it will return a vector. If not it will return nil.
+-- Realm: Server
 --
 function ENT:FindSpot( type,  options )
 
@@ -227,6 +240,7 @@ end
 -- Desc: Called from Lua when the NPC is stuck. This should only be called from the behaviour coroutine - so if you want to override this function and do something special that yields - then go for it.\n\nYou should always call self.loco:ClearStuck() in this function to reset the stuck status - so it knows it's unstuck.
 -- Arg1: 
 -- Ret1: 
+-- Realm: Server
 --
 function ENT:HandleStuck()
 
@@ -243,6 +257,7 @@ end
 -- Arg1: Vector|pos|The position we want to get to
 -- Arg2: table|options|A table containing a bunch of tweakable options. See the function definition for more details
 -- Ret1: string|Either "failed", "stuck", "timeout" or "ok" - depending on how the NPC got on
+-- Realm: Server
 --
 function ENT:MoveToPos( pos, options )
 
@@ -301,6 +316,7 @@ end
 -- Arg1: string|name|The sequence name
 -- Arg2: number|the speed (default 1)
 -- Ret1: 
+-- Realm: Server
 --
 function ENT:PlaySequenceAndWait( name, speed )
 
@@ -324,6 +340,7 @@ end
 -- Arg3: number|type|The type of use (USE_ON, USE_OFF, USE_TOGGLE, USE_SET)
 -- Arg4: number|value|Any passed value
 -- Ret1: 
+-- Realm: Server
 --
 function ENT:Use( activator, caller, type, value )
 
@@ -334,6 +351,7 @@ end
 -- Desc: Called periodically
 -- Arg1:
 -- Ret1: 
+-- Realm: Server
 --
 function ENT:Think()
 
